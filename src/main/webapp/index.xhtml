@@ -1,0 +1,594 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#3F51B5" />        
+        <h:outputStylesheet name="primefaces-tema/fa/font-awesome.css" />
+        <h:outputStylesheet name="primefaces-tema/components.css" />
+        <h:outputScript name="primefaces-tema/jquery/jquery.js"/>
+        <h:outputScript name="primefaces-tema/core.js"/>
+        <h:outputScript name="primefaces-tema/components.js"/>
+        <h:outputScript name="primefaces-tema/jquery/jquery-plugins.js"/>
+        <h:outputStylesheet name="primefaces-tema/charts/charts.css" />
+        <h:outputScript name="primefaces-tema/charts/charts.js"/>
+        <h:outputStylesheet name="primefaces-tema/schedule/schedule.css" />
+        <h:outputScript name="primefaces-tema/moment/moment.js"/>
+        <h:outputScript name="primefaces-tema/schedule/schedule.js"/>
+        <h:outputStylesheet name="primefaces-tema/css/nanoscroller.css" />
+        <h:outputStylesheet name="primefaces-tema/css/animate.css" />
+        <h:outputStylesheet name="primefaces-tema/css/ripple.css" />
+        <h:outputStylesheet name="primefaces-tema/css/layout-indigo.css" />
+        <script type="text/javascript">
+            if (window.PrimeFaces) {
+                PrimeFaces.settings.locale = 'en_US';
+            }
+        </script>
+        <title>DEBV - BNP</title>
+        <h:outputScript name="primefaces-tema/js/nanoscroller.js"/>
+        <h:outputScript name="primefaces-tema/js/layout.js"/>
+        <h:outputScript name="primefaces-tema/js/ripple.js"/>
+        <h:outputScript name="primefaces-tema/js/swipe.js"/>
+        <script type="text/javascript">
+            //<![CDATA[
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title = '';
+                this.cfg.seriesColors = ['#FFC107', '#03A9F4'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#ffffff',
+                    gridLineColor: '#EEEEEE',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#212121'
+                    }
+                };
+                this.cfg.seriesDefaults = {
+                    shadow: false,
+                    lineWidth: 1,
+                    markerOptions: {
+                        shadow: false,
+                        size: 7,
+                        style: 'circle'
+                    }
+                }
+            }
+            //]]>  
+        </script>
+        <style type="text/css">
+            .main-content {
+                padding: 0;
+            }
+        </style>
+    </h:head>
+    <h:body class="main-body layout-compact">
+
+        <div class="layout-wrapper menu-layout-static">
+
+            <div class="topbar clearfix">
+                <div class="topbar-left">            
+                    <div class="logo"></div>
+                </div>
+
+                <div class="topbar-right">
+                    <a id="menu-button" href="#">
+                        <i></i>
+                    </a>
+
+                    <a id="topbar-menu-button" href="#">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="topbar-items fadeInDown animated">
+                        <li>
+                            <a href="#">
+                                <i class="topbar-icon material-icons"></i>
+                                <span class="topbar-item-name">Settings</span>
+                            </a>
+                            <ul class="ultima-menu animated">
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Change Theme</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Favorites</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Lock Screen</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Wallpaper</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="topbar-icon material-icons animated swing"></i>
+                                <span class="topbar-badge animated rubberBand">0</span>
+                                <span class="topbar-item-name">Messages</span>
+                            </a>
+                            <ul class="ultima-menu animated">
+                                <li role="menuitem">
+                                    <a href="#" class="topbar-message"><img id="j_idt16" src="debv/resources/primefaces-tema/images/avatar1.png" alt="" width="35" />
+                                        <span>Contactanos</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="topbar-message">
+                                        <!--<p:graphicImage name="primefaces-tema/images/avatar2.png" alt="" width="35"/>-->
+                                        <img id="j_idt18" src="debv/resources/primefaces-tema/images/avatar2.png" alt="" width="35" />
+                                        <span>Reporte de ventas</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="topbar-message"><img id="j_idt20" src="debv/resources/primefaces-tema/images/avatar3.png" alt="" width="35" />
+                                        <span>About your invoice</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="topbar-message"><img id="j_idt22" src="debv/resources/primefaces-tema/images/avatar2.png" alt="" width="35" />
+                                        <span>Meeting today at 10pm</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="topbar-message"><img id="j_idt24" src="debv/resources/primefaces-tema/images/avatar4.png" alt="" width="35" />
+                                        <span>Out of office</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="topbar-icon material-icons"></i>
+                                <span class="topbar-badge animated rubberBand">4</span>
+                                <span class="topbar-item-name">Notifications</span>
+                            </a>
+                            <ul class="ultima-menu animated">
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Pending tasks</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Meeting today at 3pm</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Download documents</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#">
+                                        <i class="material-icons"></i>
+                                        <span>Book flight</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="search-item"><span class="md-inputfield"><input id="j_idt27" name="j_idt27" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" /><script id="j_idt27_s" type="text/javascript">PrimeFaces.cw("InputText", "widget_j_idt27", {id: "j_idt27"});</script>
+                                <label>Search</label>
+                                <i class="topbar-icon material-icons"></i></span>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <form id="menuform" name="menuform" method="post" action="http://localhost:8080/theme_ulti/debv/index.xhtml" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="menuform" value="menuform" />
+
+                <div class="layout-menu ">
+                    <div class="nano">
+                        <div class="nano-content menu-scroll-content">
+                            <div class="profile">
+                                <div class="profile-image"></div>
+                                <a id="profile-options" href="#">
+                                    <span class="profile-name">Jane Williams</span>
+                                    <i class="material-icons"></i>
+                                </a>
+                            </div>
+
+                            <ul id="profile-menu" class="ultima-menu">
+                                <li role="menuitem">
+                                    <a href="#" class="ripplelink">
+                                        <i class="material-icons">person</i>
+                                        <span>Profile</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="ripplelink">
+                                        <i class="material-icons">security</i>
+                                        <span>Privacy</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="ripplelink">
+                                        <i class="material-icons">settings_application</i>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li role="menuitem">
+                                    <a href="#" class="ripplelink">
+                                        <i class="material-icons">power_settings_new</i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul><ul id="menuform:j_idt33" class="ultima-menu clearfix"><li id="menuform:um_dashboard" role="menuitem"><a href="dashboard.html"><i class="material-icons"></i><span>Dashboard</span></a></li><li id="menuform:themes" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">palette</i><span>Themes</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:theme1" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme1': 'menuform:theme1'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Indigo - Pink</span></a></li><li id="menuform:theme2" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme2': 'menuform:theme2'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Brown - Green</span></a></li><li id="menuform:theme3" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme3': 'menuform:theme3'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Blue - Amber</span></a></li><li id="menuform:theme4" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme4': 'menuform:theme4'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Blue Grey - Green</span></a></li><li id="menuform:theme5" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme5': 'menuform:theme5'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Dark - Blue</span></a></li><li id="menuform:theme6" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme6': 'menuform:theme6'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Dark - Green</span></a></li><li id="menuform:theme7" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme7': 'menuform:theme7'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Green - Yellow</span></a></li><li id="menuform:theme8" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme8': 'menuform:theme8'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Purple - Cyan</span></a></li><li id="menuform:theme9" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme9': 'menuform:theme9'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Purple - Amber</span></a></li><li id="menuform:theme10" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme10': 'menuform:theme10'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Teal - Lime</span></a></li><li id="menuform:theme11" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme11': 'menuform:theme11'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Cyan - Amber</span></a></li><li id="menuform:theme12" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:theme12': 'menuform:theme12'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Grey - Deep Orange</span></a></li></ul></li><li id="menuform:um_customization" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">settings_application</i><span>Customization</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:custom1" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom1': 'menuform:custom1'}).submit('menuform');return false;"><i class="material-icons">fiber_manual_record</i><span>Compact Size</span></a></li><li id="menuform:custom2" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom2': 'menuform:custom2'}).submit('menuform');return false;"><i class="material-icons">fiber_smart_record</i><span>Material Size</span></a></li><li id="menuform:custom3" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom3': 'menuform:custom3'}).submit('menuform');return false;"><i class="material-icons">menu</i><span>Static Menu</span></a></li><li id="menuform:custom4" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom4': 'menuform:custom4'}).submit('menuform');return false;"><i class="material-icons">exit_to_app</i><span>Overlay Menu</span></a></li><li id="menuform:custom5" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom5': 'menuform:custom5'}).submit('menuform');return false;"><i class="material-icons">border_horizontal</i><span>Horizontal Menu</span></a></li><li id="menuform:custom6" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom6': 'menuform:custom6'}).submit('menuform');return false;"><i class="material-icons">label_outline</i><span>Light Menu</span></a></li><li id="menuform:custom7" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom7': 'menuform:custom7'}).submit('menuform');return false;"><i class="material-icons">label</i><span>Dark Menu</span></a></li><li id="menuform:custom8" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom8': 'menuform:custom8'}).submit('menuform');return false;"><i class="material-icons">contacts</i><span>Inline Profile</span></a></li><li id="menuform:custom9" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform', {'menuform:custom9': 'menuform:custom9'}).submit('menuform');return false;"><i class="material-icons">person_pin</i><span>Top Profile</span></a></li></ul></li><li id="menuform:um_components" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">list</i><span>Components</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_sample" role="menuitem"><a href="sample.html"><i class="material-icons">desktop_mac</i><span>Sample Page</span></a></li><li id="menuform:um_forms" role="menuitem"><a href="forms.html"><i class="material-icons">input</i><span>Forms</span></a></li><li id="menuform:um_data" role="menuitem"><a href="data.html"><i class="material-icons">grid_on</i><span>Data</span></a></li><li id="menuform:um_panels" role="menuitem"><a href="panel.html"><i class="material-icons">content_paste</i><span>Panels</span></a></li><li id="menuform:um_overlays" role="menuitem"><a href="overlay.html"><i class="material-icons">content_copy</i><span>Overlays</span></a></li><li id="menuform:um_menus" role="menuitem"><a href="menu.html"><i class="material-icons">menu</i><span>Menus</span></a></li><li id="menuform:um_messages" role="menuitem"><a href="messages.html"><i class="material-icons">message</i><span>Messages</span></a></li><li id="menuform:um_charts" role="menuitem"><a href="charts.html"><i class="material-icons">insert_chart</i><span>Charts</span></a></li><li id="menuform:um_file" role="menuitem"><a href="file.html"><i class="material-icons">attach_file</i><span>File</span></a></li><li id="menuform:um_misc" role="menuitem"><a href="misc.html"><i class="material-icons">toys</i><span>Misc</span></a></li></ul></li><li id="menuform:um_default" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">get_app</i><span>Template Pages</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_db_landing" role="menuitem"><a href="landing.html"><i class="material-icons">flight_land</i><span>Landing</span></a></li><li id="menuform:um_empty" role="menuitem"><a href="empty.html"><i class="material-icons">hourglass_empty</i><span>Empty Page</span></a></li><li id="menuform:um_login" role="menuitem"><a href="login.html"><i class="material-icons">verified_user</i><span>Login Page</span></a></li><li id="menuform:um_error" role="menuitem"><a href="error.html"><i class="material-icons">error</i><span>Error Page</span></a></li><li id="menuform:um_404" role="menuitem"><a href="404.html"><i class="material-icons">error_outline</i><span>404 Page</span></a></li><li id="menuform:um_access" role="menuitem"><a href="access.html"><i class="material-icons">security</i><span>Access Denied Page</span></a></li></ul></li><li id="menuform:um_hierarchy" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">menu</i><span>Menu Hierarchy</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_sm1" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_sm11" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_lnk111" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 1.1.1</span></a></li><li id="menuform:um_lnk112" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 1.1.2</span></a></li><li id="menuform:um_lnk113" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 1.1.3</span></a></li></ul></li><li id="menuform:um_sm12" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_lnk121" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 1.2.1</span></a></li></ul></li></ul></li><li id="menuform:um_sm2" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_sm21" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_lnk211" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 2.1.1</span></a></li><li id="menuform:um_lnk212" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 2.1.2</span></a></li></ul></li><li id="menuform:um_sm22" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:um_lnk221" role="menuitem"><a href="%3bjsessionid%3d1ceaapypn50wiash464frl7ie.html#"><i class="material-icons">subject</i><span>Link 2.2.1</span></a></li></ul></li></ul></li></ul></li><li id="menuform:um_utils" role="menuitem"><a href="utils.html"><i class="material-icons">build</i><span>Utils</span></a></li><li id="menuform:um_doc" role="menuitem"><a href="docs.html"><i class="material-icons">find_in_page</i><span>Documentation</span></a></li></ul><script id="menuform:j_idt33_s" type="text/javascript">PrimeFaces.cw("Ultima", "me", {id: "menuform:j_idt33"});</script>
+                        </div>
+                    </div>
+                </div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="1091718178600805884:2888099912599102461" autocomplete="off" />
+            </form>
+
+            <div class="layout-main">
+                <div class="ui-g dashboard">
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="card overview">
+                            <div class="overview-content clearfix">
+                                <span class="overview-title">Sales</span>
+                                <span class="overview-badge">+%90</span>
+                                <span class="overview-detail">$22,650 / week</span>
+                            </div>
+                            <div class="overview-footer"><img id="j_idt37" src="debv/resources/primefaces-tema/images/dashboard/sales.svg" alt="" style="width: 100%" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="card overview">
+                            <div class="overview-content clearfix">
+                                <span class="overview-title">Views</span>
+                                <span class="overview-badge">+%60</span>
+                                <span class="overview-detail">6,520 / day</span>
+                            </div>
+                            <div class="overview-footer"><img id="j_idt39" src="debv/resources/primefaces-tema/images/dashboard/views.svg" alt="" style="width: 100%" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="card overview">
+                            <div class="overview-content clearfix">
+                                <span class="overview-title">Users</span>
+                                <span class="overview-badge">+%45</span>
+                                <span class="overview-detail">5,200 / day</span>
+                            </div>
+                            <div class="overview-footer"><img id="j_idt41" src="debv/resources/primefaces-tema/images/dashboard/progress.svg" alt="" style="width: 100%" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <div class="ui-g card colorbox colorbox-1">
+                            <div class="ui-g-4">
+                                <i class="material-icons">check_circle</i>
+                            </div>
+                            <div class="ui-g-8">
+                                <span class="colorbox-name">Tasks</span>
+                                <span class="colorbox-count">50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <div class="ui-g card colorbox colorbox-2">
+                            <div class="ui-g-4">
+                                <i class="material-icons">shopping_card</i>
+                            </div>
+                            <div class="ui-g-8">
+                                <span class="colorbox-name">Purchases</span>
+                                <span class="colorbox-count">1200</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <div class="ui-g card colorbox colorbox-3">
+                            <div class="ui-g-4">
+                                <i class="material-icons">report</i>
+                            </div>
+                            <div class="ui-g-8">
+                                <span class="colorbox-name">Issues</span>
+                                <span class="colorbox-count">22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-3">
+                        <div class="ui-g card colorbox colorbox-4">
+                            <div class="ui-g-4">
+                                <i class="material-icons">email</i>
+                            </div>
+                            <div class="ui-g-8">
+                                <span class="colorbox-name">Messages</span>
+                                <span class="colorbox-count">10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-6 ui-lg-4 task-list">
+                        <p:panel header="Tareas">
+                            <ul>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">Reporte de ventas</span>
+                                    <i class="material-icons ui-icon-blank"></i>
+                                </li>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">Notificaciones de pago</span>
+                                    <i class="material-icons ui-icon-c"></i>
+                                </li>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">Almuerzos</span>
+                                    <i class="material-icons ui-icon-blank"></i>
+                                </li>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">Reunion con cliente</span>
+                                    <i class="material-icons ui-icon-blank"></i>
+                                </li>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">Nevo tema</span>
+                                    <i class="material-icons ui-icon-blank"></i>
+                                </li>
+                                <li>
+                                    <p:selectBooleanCheckbox />
+                                    <span class="task-name">ticket de vuelo</span>
+                                    <i class="material-icons ui-icon-pencil"></i>
+                                </li>
+                            </ul>
+                        </p:panel>
+
+                    </div>
+
+                    <div class="ui-g-12 ui-md-6 ui-lg-4 ui-fluid contact-form">
+                        <p:panel header="Contactanos" >                        
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                    <p:selectOneMenu id="cbo_contacto" >
+                                        <f:selectItem itemLabel="Seleccione un tipo" itemValue="" />
+                                        <f:selectItem itemLabel="Facebook" itemValue="Facebook" />
+                                        <f:selectItem itemLabel="Messenger" itemValue="Messenger" />
+                                        <f:selectItem itemLabel="Watssap" itemValue="Watssap" />
+                                    </p:selectOneMenu>
+                                </div>
+                                <div class="ui-g-12">
+                                    <h:panelGroup styleClass="md-inputfield">
+                                        <p:inputText id="nombre"/>
+                                        <p:outputLabel for="nombre" value="Nombre" />
+                                    </h:panelGroup>
+                                </div>
+                                <div class="ui-g-12">
+                                    <h:panelGroup styleClass="md-inputfield">
+                                        <p:inputText id="edad"/>
+                                        <p:outputLabel for="edad" value="Edad" />
+                                    </h:panelGroup>
+                                </div>
+                                <div class="ui-g-12">
+                                    <h:panelGroup styleClass="md-inputfield">
+                                        <p:inputText id="mensaje"/>
+                                        <p:outputLabel for="mensaje" value="Mensaje" />
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                            <p:commandButton value="Enviar" icon="ui-icon-send" iconPos="left"/>
+                        </p:panel>
+                    </div>
+
+                    <div class="ui-g-12 ui-lg-4 contacts">
+                        <p:panel header="Lista de contactos" >
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <p:graphicImage url="debv/resources/primefaces-tema/images/avatar1.png" alt="" width="45" />
+                                        <span class="name">Joshua Williams</span>
+                                        <span class="email">joshua@pf-ultima.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p:graphicImage url="debv/resources/primefaces-tema/images/avatar2.png" alt="" width="45" />
+                                        <span class="name">Emily Clark</span>
+                                        <span class="email">emily@pf-ultima.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p:graphicImage url="debv/resources/primefaces-tema/images/avatar3.png" alt="" width="45" />
+                                        <span class="name">Susan Johnson</span>
+                                        <span class="email">susan@pf-ultima.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img id="j_idt87" src="debv/resources/primefaces-tema/images/avatar4.png" alt="" width="45" />
+                                        <span class="name">Kelly Stark</span>
+                                        <span class="email">kelly@pf-ultima.com</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </p:panel>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="card timeline ui-fluid">
+                            <div class="ui-g">
+                                <div class="ui-g-3">
+                                    <span class="event-time">just now</span>
+                                    <i class="material-icons" style="color:#009688"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner" style="color:#009688">Katherine May</span>
+                                    <span class="event-text">Lorem ipsun dolor amet</span>
+                                    <div class="event-content"><img id="j_idt90" src="debv/resources/primefaces-tema/images/dashboard/md.png" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="ui-g-3">
+                                    <span class="event-time">12h ago</span>
+                                    <i class="material-icons" style="color:#E91E63"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner" style="color:#E91E63">Brandon Santos</span>
+                                    <span class="event-text">Ab nobis, magnam sunt eum. Laudantium, repudiandae, similique!.</span>
+                                </div>
+
+                                <div class="ui-g-3">
+                                    <span class="event-time">15h ago</span>
+                                    <i class="material-icons" style="color:#9c27b0"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner" style="color:#9c27b0">Stephan Ward</span>
+                                    <span class="event-text">Omnis veniam quibusdam ratione est repellat qui nam quisquam ab mollitia dolores ullam voluptates, similique, dignissimos.</span>
+                                </div>
+
+                                <div class="ui-g-3">
+                                    <span class="event-time">2d ago</span>
+                                    <i class="material-icons" style="color:#ff9800"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner" style="color:#ff9800">Jason Smith</span>
+                                    <span class="event-text">Laudantium, repudiandae, similique!</span>
+                                    <div class="event-content"><img id="j_idt92" src="debv/resources/primefaces-tema/images/dashboard/map.png" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="ui-g-3">
+                                    <span class="event-time">1w ago</span>
+                                    <i class="material-icons" style="color:#607d8b"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner">Kevin Cox</span>
+                                    <span class="event-text">Quibusdam ratione est repellat qui nam quisquam veniam quibusdam ratione.</span>
+                                </div>
+
+                                <div class="ui-g-3">
+                                    <span class="event-time">2w ago</span>
+                                    <i class="material-icons" style="color:#FFC107"></i>
+                                </div>
+                                <div class="ui-g-9">
+                                    <span class="event-owner" style="color:#FFC107">Walter White</span>
+                                    <span class="event-text">I am the one who knocks!</span>
+                                </div>
+
+                                <div class="ui-g-12"><button id="j_idt94" name="j_idt94" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" type="button"><span class="ui-button-icon-left ui-icon ui-c ui-icon-refresh"></span><span class="ui-button-text ui-c">Refresh</span></button><script id="j_idt94_s" type="text/javascript">PrimeFaces.cw("CommandButton", "widget_j_idt94", {id: "j_idt94"});</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-8">
+                        <form id="j_idt96" name="j_idt96" method="post" action="http://www.primefaces.org/ultima/index.xhtml;jsessionid=1ceaapypn50wiash464frl7ie" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="j_idt96" value="j_idt96" />
+
+                            <div class="card"><div id="j_idt96:j_idt98" class="ui-datatable ui-widget ui-datatable-reflow" style="margin-bottom:20px"><label id="j_idt96:j_idt98_reflowDD_label" for="j_idt96:j_idt98_reflowDD" class="ui-reflow-label">Sort</label><select id="j_idt96:j_idt98_reflowDD" name="j_idt96:j_idt98_reflowDD" class="ui-reflow-dropdown ui-state-default"><option value="0_0">Id Ascending</option><option value="0_1">Id Descending</option><option value="1_0">Year Ascending</option><option value="1_1">Year Descending</option><option value="2_0">Brand Ascending</option><option value="2_1">Brand Descending</option><option value="3_0">Color Ascending</option><option value="3_1">Color Descending</option></select><div class="ui-datatable-header ui-widget-header ui-corner-top">Recent Sales</div><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="j_idt96:j_idt98_head"><tr role="row"><th id="j_idt96:j_idt98:j_idt100" class="ui-state-default ui-sortable-column" role="columnheader" aria-label="Id"><span class="ui-column-title">Id</span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span></th><th id="j_idt96:j_idt98:j_idt102" class="ui-state-default ui-sortable-column" role="columnheader" aria-label="Year"><span class="ui-column-title">Year</span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span></th><th id="j_idt96:j_idt98:j_idt104" class="ui-state-default ui-sortable-column" role="columnheader" aria-label="Brand"><span class="ui-column-title">Brand</span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span></th><th id="j_idt96:j_idt98:j_idt106" class="ui-state-default ui-sortable-column" role="columnheader" aria-label="Color"><span class="ui-column-title">Color</span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span></th></tr></thead><tbody id="j_idt96:j_idt98_data" class="ui-datatable-data ui-widget-content" tabindex="0"><tr data-ri="0" data-rk="e3aa0c3d" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">e3aa0c3d</td><td role="gridcell">1979</td><td role="gridcell">Jaguar</td><td role="gridcell">Brown</td></tr><tr data-ri="1" data-rk="c7523729" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">c7523729</td><td role="gridcell">1971</td><td role="gridcell">Ford</td><td role="gridcell">Orange</td></tr><tr data-ri="2" data-rk="d93f68f5" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">d93f68f5</td><td role="gridcell">1989</td><td role="gridcell">Ford</td><td role="gridcell">Black</td></tr><tr data-ri="3" data-rk="cd23df3e" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">cd23df3e</td><td role="gridcell">1970</td><td role="gridcell">Honda</td><td role="gridcell">Yellow</td></tr><tr data-ri="4" data-rk="2d7bbb59" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">2d7bbb59</td><td role="gridcell">2005</td><td role="gridcell">Volvo</td><td role="gridcell">Orange</td></tr><tr data-ri="5" data-rk="f2ff047d" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">f2ff047d</td><td role="gridcell">1997</td><td role="gridcell">Ford</td><td role="gridcell">Yellow</td></tr><tr data-ri="6" data-rk="2c3178fb" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">2c3178fb</td><td role="gridcell">1968</td><td role="gridcell">Fiat</td><td role="gridcell">Silver</td></tr><tr data-ri="7" data-rk="4f3cae05" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">4f3cae05</td><td role="gridcell">1962</td><td role="gridcell">Honda</td><td role="gridcell">Silver</td></tr><tr data-ri="8" data-rk="d26bc6b5" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">d26bc6b5</td><td role="gridcell">1960</td><td role="gridcell">Fiat</td><td role="gridcell">Green</td></tr><tr data-ri="9" data-rk="517e54c6" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">517e54c6</td><td role="gridcell">1990</td><td role="gridcell">Renault</td><td role="gridcell">Silver</td></tr></tbody></table></div><input type="hidden" id="j_idt96:j_idt98_selection" name="j_idt96:j_idt98_selection" autocomplete="off" value="" /></div><script id="j_idt96:j_idt98_s" type="text/javascript">$(function () {
+                                    PrimeFaces.cw("DataTable", "widget_j_idt96_j_idt98", {id: "j_idt96:j_idt98", selectionMode: "single", reflow: true});
+                                });</script><div id="j_idt96:j_idt108" class="ui-panel ui-widget ui-widget-content ui-corner-all" data-widget="widget_j_idt96_j_idt108"><div id="j_idt96:j_idt108_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">Sales Graph</span></div><div id="j_idt96:j_idt108_content" class="ui-panel-content ui-widget-content"><div id="j_idt96:j_idt109"></div><script id="j_idt96:j_idt109_s" type="text/javascript">$(function () {
+                                        PrimeFaces.cw('Chart', 'widget_j_idt96_j_idt109', {id: 'j_idt96:j_idt109', type: 'line', responsive: true, data: [[[1, 2], [2, 1], [3, 3], [4, 6], [5, 8]], [[1, 6], [2, 3], [3, 2], [4, 7], [5, 9]]], title: "Linear Chart", legendPosition: "e", extender: skinChart, axes: {xaxis: {label: "", renderer: $.jqplot.LinearAxisRenderer, tickOptions: {angle: 0}}, yaxis: {label: "", min: 0, max: 10, renderer: $.jqplot.LinearAxisRenderer, tickOptions: {angle: 0}}}, series: [{label: 'Series 1', renderer: $.jqplot.LineRenderer, showLine: true, markerOptions: {show: true, style: 'filledCircle'}, rendererOptions: {smooth: true}}, {label: 'Series 2', renderer: $.jqplot.LineRenderer, showLine: true, markerOptions: {show: true, style: 'filledCircle'}, rendererOptions: {smooth: true}}], datatip: true}, 'charts');
+                                    });</script></div></div><script id="j_idt96:j_idt108_s" type="text/javascript">PrimeFaces.cw("Panel", "widget_j_idt96_j_idt108", {id: "j_idt96:j_idt108"});</script>
+                            </div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:26" value="1091718178600805884:2888099912599102461" autocomplete="off" />
+                        </form>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-8"><div id="j_idt112" class="ui-panel ui-widget ui-widget-content ui-corner-all" style="height:100%" data-widget="widget_j_idt112"><div id="j_idt112_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">Calendar</span></div><div id="j_idt112_content" class="ui-panel-content ui-widget-content"><div id="j_idt113"><div id="j_idt113_container"></div><input type="hidden" id="j_idt113_view" name="j_idt113_view" autocomplete="off" value="month" /></div><script id="j_idt113_s" type="text/javascript">$(function () {
+                            PrimeFaces.cw("Schedule", "widget_j_idt113", {id: "j_idt113", defaultView: "month", locale: "en_US", lazyFetching: false, header: {left: 'prev,next today', center: "title", right: "month,agendaWeek,agendaDay"}});
+                        });</script></div></div><script id="j_idt112_s" type="text/javascript">PrimeFaces.cw("Panel", "widget_j_idt112", {id: "j_idt112"});</script>
+                    </div>
+                    <div class="ui-g-12 ui-md-4"><div id="j_idt115" class="ui-panel ui-widget ui-widget-content ui-corner-all" style="height:100%" data-widget="widget_j_idt115"><div id="j_idt115_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">Activity</span></div><div id="j_idt115_content" class="ui-panel-content ui-widget-content">
+                                <div class="activity-header">
+                                    <div class="ui-g">
+                                        <div class="ui-g-6">
+                                            <span style="font-weight:bold">Last Activity</span>
+                                            <p>Updated 1 minute ago</p>
+                                        </div>
+                                        <div class="ui-g-6" style="text-align:right"><button id="j_idt117" name="j_idt117" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" type="button"><span class="ui-button-icon-left ui-icon ui-c ui-icon-update"></span><span class="ui-button-text ui-c">ui-button</span></button><script id="j_idt117_s" type="text/javascript">PrimeFaces.cw("CommandButton", "widget_j_idt117", {id: "j_idt117"});</script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="activity-list">
+                                    <li>
+                                        <div class="count">$900</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Income</div>
+                                            <div class="ui-g-6">95%</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="count" style="background-color:#ffc107">$250</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Tax</div>
+                                            <div class="ui-g-6">24%</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="count" style="background-color:#673AB7">$125</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Invoices</div>
+                                            <div class="ui-g-6">55%</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="count" style="background-color:#00bcd4">$250</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Expenses</div>
+                                            <div class="ui-g-6">15%</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="count" style="background-color:#607D8B">$350</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Bonus</div>
+                                            <div class="ui-g-6">5%</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="count" style="background-color:#FF5722">$500</div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-6">Revenue</div>
+                                            <div class="ui-g-6">25%</div>
+                                        </div>
+                                    </li>
+                                </ul></div></div><script id="j_idt115_s" type="text/javascript">PrimeFaces.cw("Panel", "widget_j_idt115", {id: "j_idt115"});</script>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="card clearfix">
+                        <span class="footer-text-left">PrimeFaces ULTIMA</span>
+                        <span class="footer-text-right"><span class="ui-icon ui-icon-copyright"></span>  <span>All Rights Reserved</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="j_idt122" style="width:32px;height:32px;position:fixed;right:7px;bottom:7px"><div id="j_idt122_start" style="display:none">
+                <i class="fa fa-circle-o-notch fa-spin ajax-loader" aria-hidden="true"></i></div><div id="j_idt122_complete" style="display:none"></div></div><script id="j_idt122_s" type="text/javascript">$(function () {
+                        PrimeFaces.cw("AjaxStatus", "widget_j_idt122", {id: "j_idt122"});
+                    });</script>
+
+    </h:body>
+
+
+</html>
+
